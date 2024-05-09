@@ -1,14 +1,15 @@
 import React from 'react'
 
 export default function Quotes() {
+  const quotes = useSelector(st => st.quotesState.quotes)
   const quotes = [{ // ✨ `quotes` must come from the Redux store
     id: 3,
     quoteText: "Be yourself; everyone else is already taken.",
     authorName: "Oscar Wilde",
     apocryphal: false,
   }]
-  const displayAllQuotes = true // ✨ `displayAllQuotes` must come from the Redux store
-  const highlightedQuote = 3 // ✨ `highlightedQuote` must come from the Redux store
+  const displayAllQuotes = useSelector(st => st.quotesState.displayAllQuotes) // ✨ `displayAllQuotes` must come from the Redux store
+  const highlightedQuote = useSelector (st.quotesState.highlightedQuote) // ✨ `highlightedQuote` must come from the Redux store
 
   return (
     <div id="quotes">
